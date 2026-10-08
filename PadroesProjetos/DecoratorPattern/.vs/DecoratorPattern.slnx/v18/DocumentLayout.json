@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\decoratorpattern\\decoratorpattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|solutionrelative:decoratorpattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\decoratorpattern\\decoratorpattern\\decorators\\logprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|solutionrelative:decoratorpattern\\decorators\\logprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\decoratorpattern\\decoratorpattern\\decorators\\cacheprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|solutionrelative:decoratorpattern\\decorators\\cacheprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\decoratorpattern\\decoratorpattern\\decorators\\produtorepositorydecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|solutionrelative:decoratorpattern\\decorators\\produtorepositorydecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\decoratorpattern\\decoratorpattern\\repositorios\\produtorepositorybefore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD954C6E-8636-3BD6-E23E-D3A085D67B09}|DecoratorPattern\\DecoratorPattern.csproj|solutionrelative:decoratorpattern\\repositorios\\produtorepositorybefore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CacheProdutoRepository.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\CacheProdutoRepository.cs",
+              "RelativeDocumentMoniker": "DecoratorPattern\\Decorators\\CacheProdutoRepository.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\CacheProdutoRepository.cs",
+              "RelativeToolTip": "DecoratorPattern\\Decorators\\CacheProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T16:34:10.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoRepositoryDecorator.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\ProdutoRepositoryDecorator.cs",
+              "RelativeDocumentMoniker": "DecoratorPattern\\Decorators\\ProdutoRepositoryDecorator.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\ProdutoRepositoryDecorator.cs",
+              "RelativeToolTip": "DecoratorPattern\\Decorators\\ProdutoRepositoryDecorator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T16:32:20.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Program.cs",
+              "RelativeDocumentMoniker": "DecoratorPattern\\Program.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Program.cs",
+              "RelativeToolTip": "DecoratorPattern\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T16:27:04.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogProdutoRepository.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\LogProdutoRepository.cs",
+              "RelativeDocumentMoniker": "DecoratorPattern\\Decorators\\LogProdutoRepository.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Decorators\\LogProdutoRepository.cs",
+              "RelativeToolTip": "DecoratorPattern\\Decorators\\LogProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T16:25:35.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutoRepositoryBefore.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Repositorios\\ProdutoRepositoryBefore.cs",
+              "RelativeDocumentMoniker": "DecoratorPattern\\Repositorios\\ProdutoRepositoryBefore.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\DecoratorPattern\\DecoratorPattern\\Repositorios\\ProdutoRepositoryBefore.cs",
+              "RelativeToolTip": "DecoratorPattern\\Repositorios\\ProdutoRepositoryBefore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T16:17:54.113Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

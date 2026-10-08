@@ -1,0 +1,15 @@
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\bin\Debug\net8.0\DecoratorPattern.exe
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\bin\Debug\net8.0\DecoratorPattern.deps.json
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\bin\Debug\net8.0\DecoratorPattern.runtimeconfig.json
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\bin\Debug\net8.0\DecoratorPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\bin\Debug\net8.0\DecoratorPattern.pdb
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.AssemblyInfoInputs.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.AssemblyInfo.cs
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.csproj.CoreCompileInputs.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.sourcelink.json
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\refint\DecoratorPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.pdb
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\DecoratorPattern.genruntimeconfig.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\DecoratorPattern\DecoratorPattern\obj\Debug\net8.0\ref\DecoratorPattern.dll
