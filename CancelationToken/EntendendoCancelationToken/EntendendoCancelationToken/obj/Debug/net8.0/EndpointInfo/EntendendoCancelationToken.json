@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EntendendoCancelationToken",
+    "version": "1.0"
+  },
+  "paths": {
+    "/long-runing-request": {
+      "get": {
+        "tags": [
+          "EntendendoCancelationToken"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/long-runing-request-com-cancelation": {
+      "get": {
+        "tags": [
+          "EntendendoCancelationToken"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

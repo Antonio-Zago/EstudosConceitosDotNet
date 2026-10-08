@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export3.dtd">
+<en-export export-date="20261001T120000Z" application="Evernote" version="10">
+<note>
+<title>CancellationToken ponta a ponta (.NET, JavaScript, Flutter)</title>
+<created>20261001T120000Z</created>
+<updated>20261001T120000Z</updated>
+<tag>dotnet</tag>
+<tag>aspnetcore</tag>
+<tag>cancellationtoken</tag>
+<tag>flutter</tag>
+<content><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note>
+<h1>CancellationToken ponta a ponta</h1>
+<p>Como o cancelamento de uma requisição sai do cliente (JS, .NET ou Flutter), atravessa o HTTP e chega no endpoint ASP.NET Core.</p>
+
+<h2>1. Lado do servidor (ASP.NET Core)</h2>
+<p>Em Minimal API (e em controllers), um parâmetro <b>CancellationToken</b> é vinculado automaticamente a <b>HttpContext.RequestAborted</b>. Esse token é acionado quando o cliente desiste da requisição.</p>
+<p><b>Receber o token não basta: é preciso repassá-lo.</b> Se ele não for usado, o servidor continua trabalhando para ninguém.</p>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">app.MapGet("long-running-request", async (CancellationToken cancellationToken) =&gt;
+{
+    var id = Guid.NewGuid();
+    var results = new List&lt;string&gt;();
+
+    try
+    {
+        for (int i = 0; i &lt; 100; i++)
+        {
+            await Task.Delay(1000, cancellationToken); // repassa o token
+            var result = $"{id} - Result {i}";
+            Console.WriteLine(result);
+            results.Add(result);
+        }
+        return Results.Ok(results);
+    }
+    catch (OperationCanceledException)
+    {
+        Console.WriteLine($"{id} - Requisição cancelada pelo cliente");
+        return Results.StatusCode(499); // convenção "Client Closed Request"
+    }
+});</pre>
+<ul>
+<li>Repasse o token para <b>tudo</b> que for assíncrono e aceitar um: HttpClient, ToListAsync/SaveChangesAsync do EF Core, Task.Delay etc. Com o EF Core, o cancelamento chega até o banco.</li>
+<li>Em código síncrono ou CPU-bound, verifique manualmente dentro do loop: <b>cancellationToken.ThrowIfCancellationRequested();</b></li>
+<li>A <b>OperationCanceledException</b> (ou TaskCanceledException) é esperada ao cancelar.</li>
+<li>O Swagger UI não cancela a requisição de verdade. Para testar, use o navegador (feche a aba) ou o curl (Ctrl+C).</li>
+</ul>
+
+<h2>2. O fluxo completo</h2>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">[Usuário clica "Cancelar" / sai da tela]
+        |
+        v
+Cliente: cts.Cancel() / controller.abort() / cancelToken.cancel()
+        |
+        v
+Rede: HTTP/1.1 -&gt; a conexão TCP é fechada
+      HTTP/2   -&gt; RST_STREAM só daquele stream
+        |
+        v
+Kestrel detecta que o cliente foi embora -&gt; dispara RequestAborted
+        |
+        v
+O cancellationToken do endpoint é cancelado -&gt; OperationCanceledException -&gt; o trabalho para</pre>
+<p><b>O cliente NÃO envia outra requisição para cancelar.</b> Quem transmite o cancelamento é o próprio protocolo de transporte. No DevTools, a requisição aparece como "(canceled)".</p>
+
+<h2>3. Cliente .NET</h2>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">using var cts = new CancellationTokenSource();
+// botão Cancelar -&gt; cts.Cancel();   timeout -&gt; cts.CancelAfter(TimeSpan.FromSeconds(10));
+
+try
+{
+    var resposta = await http.GetAsync("long-running-request", cts.Token);
+    var conteudo = await resposta.Content.ReadAsStringAsync(cts.Token);
+}
+catch (OperationCanceledException)
+{
+    Console.WriteLine("Operação cancelada pelo usuário.");
+}</pre>
+
+<h2>4. Cliente JavaScript</h2>
+<p><b>AbortController</b> é o equivalente do CancellationTokenSource.</p>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">const controller = new AbortController();
+document.getElementById("cancelar").onclick = () =&gt; controller.abort();
+
+try {
+  const resp = await fetch("/long-running-request", { signal: controller.signal });
+  console.log(await resp.json());
+} catch (e) {
+  if (e.name === "AbortError") console.log("Cancelado pelo usuário");
+}</pre>
+<p>Se o usuário fechar a aba, recarregar ou navegar para outra página, o navegador aborta as requisições pendentes sozinho.</p>
+
+<h2>5. Cliente Flutter</h2>
+<p><b>Erro comum:</b> um Future não pode ser cancelado. Ignorar o resultado de http.get(...) NÃO fecha a conexão, e o servidor continua processando até o fim.</p>
+<p><b>Dio com CancelToken</b> (a opção mais usada):</p>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">CancelToken? _cancelToken;
+
+Future&lt;void&gt; buscar() async {
+  _cancelToken = CancelToken();
+  try {
+    final resp = await dio.get('long-running-request', cancelToken: _cancelToken);
+  } on DioException catch (e) {
+    if (CancelToken.isCancel(e)) {
+      print('Cancelado pelo usuário');
+    } else {
+      rethrow;
+    }
+  }
+}
+
+void cancelar() =&gt; _cancelToken?.cancel('Usuário cancelou');</pre>
+<p><b>Cancelar ao sair da tela</b> (no Flutter isso não acontece sozinho):</p>
+<pre style="background-color:#f6f6f6;border:1px solid #ddd;border-radius:4px;padding:8px;font-family:Consolas,Menlo,monospace;font-size:12px;">final _cancelToken = CancelToken();
+
+@override
+void dispose() {
+  _cancelToken.cancel();
+  super.dispose();
+}
+// após o await: if (!mounted) return;</pre>
+<p><b>Pacote http:</b> a partir da 1.5.0 existe AbortableRequest (com abortTrigger, um Future que aborta a requisição ao completar; a exceção é RequestAbortedException). Em versões antigas, a única forma é usar um http.Client dedicado para a requisição e chamar client.close().</p>
+
+<h2>6. Tabela de equivalências</h2>
+<table style="border-collapse:collapse;">
+<tr><th style="border:1px solid #ccc;padding:4px;">.NET</th><th style="border:1px solid #ccc;padding:4px;">JavaScript</th><th style="border:1px solid #ccc;padding:4px;">Flutter (Dio)</th></tr>
+<tr><td style="border:1px solid #ccc;padding:4px;">CancellationTokenSource</td><td style="border:1px solid #ccc;padding:4px;">AbortController</td><td style="border:1px solid #ccc;padding:4px;">CancelToken</td></tr>
+<tr><td style="border:1px solid #ccc;padding:4px;">cts.Cancel()</td><td style="border:1px solid #ccc;padding:4px;">controller.abort()</td><td style="border:1px solid #ccc;padding:4px;">cancelToken.cancel()</td></tr>
+<tr><td style="border:1px solid #ccc;padding:4px;">OperationCanceledException</td><td style="border:1px solid #ccc;padding:4px;">AbortError</td><td style="border:1px solid #ccc;padding:4px;">DioException + CancelToken.isCancel(e)</td></tr>
+</table>
+
+<h2>7. Cuidados importantes</h2>
+<ul>
+<li><b>O cancelamento é cooperativo.</b> O token só avisa. Quem para de fato é o código que verifica o token.</li>
+<li><b>Efeitos colaterais:</b> um cancelamento entre dois SaveChangesAsync deixa metade dos dados gravada. Use transação, ou NÃO repasse o token em operações que precisam terminar mesmo que o cliente desista (ex.: pagamento).</li>
+<li><b>Proxies e balanceadores</b> (Nginx, IIS, Gateway) podem atrasar ou não repassar o fechamento da conexão. Teste em produção.</li>
+<li><b>O servidor não distingue</b> "clicou em Cancelar" de "fechou a aba", "a internet caiu", "o app foi para segundo plano" ou "trocou de Wi-Fi para 4G". Para ele, todos são o cliente indo embora.</li>
+<li><b>Emulador Android:</b> use 10.0.2.2 para acessar a API da sua máquina. O certificado HTTPS de dev do .NET costuma dar problema no emulador.</li>
+</ul>
+
+<h2>8. Operações realmente longas: job em background</h2>
+<p>Para operações de minutos ou horas, ou em mobile (onde a conexão é instável), não deixe a requisição HTTP aberta:</p>
+<ol>
+<li><b>POST /jobs</b>: inicia em background (BackgroundService, Hangfire etc.) e retorna 202 Accepted com o jobId.</li>
+<li><b>GET /jobs/{id}</b>: o cliente consulta o progresso (ou recebe atualizações via SignalR).</li>
+<li><b>DELETE /jobs/{id}</b>: cancelamento explícito. O servidor guarda um CancellationTokenSource por job e chama Cancel().</li>
+</ol>
+<table style="border-collapse:collapse;">
+<tr><th style="border:1px solid #ccc;padding:4px;">Cenário</th><th style="border:1px solid #ccc;padding:4px;">Como cancelar</th></tr>
+<tr><td style="border:1px solid #ccc;padding:4px;">Requisição longa com conexão aberta</td><td style="border:1px solid #ccc;padding:4px;">Abortar a requisição (sem requisição nova)</td></tr>
+<tr><td style="border:1px solid #ccc;padding:4px;">Job em background</td><td style="border:1px solid #ccc;padding:4px;">Requisição explícita: DELETE /jobs/{id}</td></tr>
+</table>
+</en-note>]]></content>
+</note>
+</en-export>

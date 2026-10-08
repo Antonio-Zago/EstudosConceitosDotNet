@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\strategypattern\\strategypattern\\strategies\\orderprocessorstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|solutionrelative:strategypattern\\strategies\\orderprocessorstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\strategypattern\\strategypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|solutionrelative:strategypattern\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\strategypattern\\strategypattern\\ordempagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|solutionrelative:strategypattern\\ordempagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|d:\\projetos\\estudosconceitosdotnet\\padroesprojetos\\strategypattern\\strategypattern\\orderprocessorbefore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F486B4C7-422C-CF32-AE74-7F6BBF2C5F1F}|StrategyPattern\\StrategyPattern.csproj|solutionrelative:strategypattern\\orderprocessorbefore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderProcessorStrategy.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\Strategies\\OrderProcessorStrategy.cs",
+              "RelativeDocumentMoniker": "StrategyPattern\\Strategies\\OrderProcessorStrategy.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\Strategies\\OrderProcessorStrategy.cs",
+              "RelativeToolTip": "StrategyPattern\\Strategies\\OrderProcessorStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T22:18:39.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\Program.cs",
+              "RelativeDocumentMoniker": "StrategyPattern\\Program.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\Program.cs",
+              "RelativeToolTip": "StrategyPattern\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T21:55:05.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrdemPagamento.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\OrdemPagamento.cs",
+              "RelativeDocumentMoniker": "StrategyPattern\\OrdemPagamento.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\OrdemPagamento.cs",
+              "RelativeToolTip": "StrategyPattern\\OrdemPagamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T21:59:44.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderProcessorBefore.cs",
+              "DocumentMoniker": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\OrderProcessorBefore.cs",
+              "RelativeDocumentMoniker": "StrategyPattern\\OrderProcessorBefore.cs",
+              "ToolTip": "D:\\Projetos\\EstudosConceitosDotNet\\PadroesProjetos\\StrategyPattern\\StrategyPattern\\OrderProcessorBefore.cs",
+              "RelativeToolTip": "StrategyPattern\\OrderProcessorBefore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T21:57:54.333Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

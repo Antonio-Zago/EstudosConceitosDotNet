@@ -1,0 +1,14 @@
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\bin\Debug\net8.0\FactoryPattern.exe
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\bin\Debug\net8.0\FactoryPattern.deps.json
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\bin\Debug\net8.0\FactoryPattern.runtimeconfig.json
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\bin\Debug\net8.0\FactoryPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\bin\Debug\net8.0\FactoryPattern.pdb
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.AssemblyInfoInputs.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.AssemblyInfo.cs
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.csproj.CoreCompileInputs.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\refint\FactoryPattern.dll
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.pdb
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\FactoryPattern.genruntimeconfig.cache
+D:\Projetos\EstudosConceitosDotNet\PadroesProjetos\FactoryPattern\FactoryPattern\obj\Debug\net8.0\ref\FactoryPattern.dll
